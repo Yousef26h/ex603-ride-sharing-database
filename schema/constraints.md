@@ -60,6 +60,6 @@
 | DriverID FOREIGN KEY → Drivers.DriverID | FK | An award must reference a real driver. |
 | DriverID ON DELETE RESTRICT | FK | Badge awards are historical evidence of driver quality; they must survive any driver deletion. |
 | DriverBadgeID FOREIGN KEY → DriverBadges.DriverBadgeID | FK | An award must reference a real badge. |
-| DriverBadgeID ON DELETE | FK | RESTRICT preserves award history when a badge is retired; CASCADE wipes awards when a badge is removed from the catalogue. Decide and defend. |
+| DriverBadgeID ON DELETE RESTRICT | FK | RESTRICT preserves award history when a badge is retired. |
 | awardedAt NOT NULL | Domain | An award with no date cannot support time-based analysis. |
 | awardedAt TIMESTAMPTZ | Domain | Timezone-aware timestamp. |
